@@ -1,5 +1,4 @@
 # Scapy 状元笔记
-
 ## 一.安装
 ### 1.1.必选
 tcpdump: `sudo apt-get install tcpdump`
@@ -421,8 +420,7 @@ Packet方法
 - proto
     - Protocol (6 bits)
     - 常用
-    
-        Protocol Number | Protocol Name                                                                                                                              | Abbreviation 
+        Protocol Number | Protocol Name| Abbreviation 
         | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
         | 1               | <a href="/wiki/Internet_Control_Message_Protocol" title="Internet Control Message Protocol">Internet Control Message Protocol</a>          | ICMP         |
         | 2               | <a href="/wiki/Internet_Group_Management_Protocol" title="Internet Group Management Protocol">Internet Group Management Protocol</a>       | IGMP         |
@@ -723,21 +721,21 @@ Packet方法
         > 重定向请求数据包, 告知主机最佳路线是通过另一个路由器
         - type: 5
         - code
-            | Code | Description                  |
-            | ---- | ---------------------------- |
-            | 0    | 网络的重定向数据报           |
-            | 1    | 主机的数据报重定向           |
-            | 2    | 服务类型和网络的重定向数据报 |
-            | 3    | 服务类型和主机的重定向数据报 |
+            Code | Description
+            ---- | ---------------------------- 
+            0    | 网络的重定向数据报           
+            1    | 主机的数据报重定向           
+            2    | 服务类型和网络的重定向数据报 
+            3    | 服务类型和主机的重定向数据报 
 
     - Time exceeded
         > 通知丢弃的数据报的源, 因为ttl到零了. 如果主机未能在限定的时间内重新组装碎片数据报, 则也可以发送超时消息. 
         - type: 11
         - code
-            | Code | Description          |
-            | ---- | -------------------- |
-            | 0    | ttl传输超时          |
-            | 1    | 超过碎片重新组装时间 |
+            Code | Description         
+            ---- | --------------------
+            0    | ttl传输超时         
+            1    | 超过碎片重新组装时间
 
     - Timestamp
         > 用于时间同步
@@ -796,24 +794,24 @@ Packet方法
         > 通知客户端由于某种原因目的地不可到达
         - type: 3
         - code
-            | Code | Description               |
-            | ---- | ------------------------- |
-            | 0    | 目标网络不可达            |
-            | 1    | 目标主机不可达            |
-            | 2    | 目标协议不可达            |
-            | 3    | 目标端口不可达            |
-            | 4    | 要求分段并设置DF flag标志 |
-            | 5    | 源路由失败                |
-            | 6    | 未知的目标网络            |
-            | 7    | 未知的目标主机            |
-            | 8    | 源主机隔离(作废不用)      |
-            | 9    | 禁止访问的网络            |
-            | 10   | 禁止访问的主机            |
-            | 11   | 对特定的TOS 网络不可达    |
-            | 12   | 对特定的TOS 主机不可达    |
-            | 13   | 由于过滤 网络流量被禁止   |
-            | 14   | 主机越权                  |
-            | 15   | 优先权终止生效            |
+            Code | Description              
+            ---- | -------------------------
+            0    | 目标网络不可达           
+            1    | 目标主机不可达           
+            2    | 目标协议不可达           
+            3    | 目标端口不可达           
+            4    | 要求分段并设置DF flag标志
+            5    | 源路由失败               
+            6    | 未知的目标网络           
+            7    | 未知的目标主机           
+            8    | 源主机隔离(作废不用)     
+            9    | 禁止访问的网络           
+            10   | 禁止访问的主机           
+            11   | 对特定的TOS 网络不可达   
+            12   | 对特定的TOS 主机不可达   
+            13   | 由于过滤 网络流量被禁止  
+            14   | 主机越权                 
+            15   | 优先权终止生效           
         - nexthopmtu
             - Next-hop MTU(16 bits)
             - 下一跳网络的MTU
@@ -897,32 +895,32 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - Next payload 8 bits.
     - 指示消息中第一个有效负载的类型. 
 
-    | Value   | Description                   | References |
-    | ------- | ----------------------------- | ---------- |
-    | 0       | None.                         | RFC 2408   |
-    | 1       | Security Association.         | RFC 2408   |
-    | 2       | Proposal.                     | RFC 2408   |
-    | 3       | Transform.                    | RFC 2408   |
-    | 4       | Key Exchange.                 | RFC 2408   |
-    | 5       | Identification.               | RFC 2408   |
-    | 6       | Certificate.                  | RFC 2408   |
-    | 7       | Certificate Request.          | RFC 2408   |
-    | 8       | Hash.                         | RFC 2408   |
-    | 9       | Signature.                    | RFC 2408   |
-    | 10      | Nonce.                        | RFC 2408   |
-    | 11      | Notification.                 | RFC 2408   |
-    | 12      | Delete.                       | RFC 2408   |
-    | 13      | Vendor ID.                    | RFC 2408   |
-    | 14      |                               |
-    | 15      | SAK, SA KEK Payload.          | RFC 3547   |
-    | 16      | SAT, SA TEK Payload.          | RFC 3547   |
-    | 17      | Key Download.                 | RFC 3547   |
-    | 18      | Sequence Number.              | RFC 3547   |
-    | 19      | Proof of Possession.          | RFC 3547   |
-    | 20      | NAT-D, NAT Discovery.         | RFC 3947   |
-    | 21      | NAT-OA, NAT Original Address. | RFC 3947   |
-    | 22-127  |                               |
-    | 128-255 | Private use.                  |
+    Value   | Description                   | References
+    ------- | ----------------------------- | ----------
+    0       | None.                         | RFC 2408  
+    1       | Security Association.         | RFC 2408  
+    2       | Proposal.                     | RFC 2408  
+    3       | Transform.                    | RFC 2408  
+    4       | Key Exchange.                 | RFC 2408  
+    5       | Identification.               | RFC 2408  
+    6       | Certificate.                  | RFC 2408  
+    7       | Certificate Request.          | RFC 2408  
+    8       | Hash.                         | RFC 2408  
+    9       | Signature.                    | RFC 2408  
+    10      | Nonce.                        | RFC 2408  
+    11      | Notification.                 | RFC 2408  
+    12      | Delete.                       | RFC 2408  
+    13      | Vendor ID.                    | RFC 2408  
+    14      |                              
+    15      | SAK, SA KEK Payload.          | RFC 3547  
+    16      | SAT, SA TEK Payload.          | RFC 3547  
+    17      | Key Download.                 | RFC 3547  
+    18      | Sequence Number.              | RFC 3547  
+    19      | Proof of Possession.          | RFC 3547  
+    20      | NAT-D, NAT Discovery.         | RFC 3947  
+    21      | NAT-OA, NAT Original Address. | RFC 3947  
+    22-127  |                              
+    128-255 | Private use.                 
 
 - version
     - Mjr version. 4 bits.
@@ -936,17 +934,17 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - Flags
     - 指示为ISAKMP交换设置的选项. 
 
-    | Value   | Description          |
-    | ------- | -------------------- |
-    | 0       | None.                |
-    | 1       | Base.                |
-    | 2       | Identity protection. |
-    | 3       | Authentication only. |
-    | 4       | Aggressive.          |
-    | 5       | Informational.       |
-    | 6-31    | ISAKMP future use.   |
-    | 32-239  | DOI specific use.    |
-    | 240-255 | Private use.         |
+    Value   | Description         
+    ------- | --------------------
+    0       | None.               
+    1       | Base.               
+    2       | Identity protection.
+    3       | Authentication only.
+    4       | Aggressive.         
+    5       | Informational.      
+    6-31    | ISAKMP future use.  
+    32-239  | DOI specific use.   
+    240-255 | Private use.        
 
 - id
     - Message ID 4 bytes
@@ -1203,16 +1201,16 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - 结构: 8 bits flags
             - 单位: bitmap
             - 变量名: Flags
-                | 标志 | 含义                                          |
-                | ---- | --------------------------------------------- |
-                | 0x01 | 在CFP中发送/接收                              |
-                | 0x02 | 用简短的序言发送/接收                         |
-                | 0x04 | 使用WEP加密发送/接收                          |
-                | 0x08 | 碎片发送/接收                                 |
-                | 0x10 | 框架包括FCS                                   |
-                | 0x20 | 帧在802.11标头和有效负载之间填充 (到32位边界) |
-                | 0x40 | 帧未通过FCS检查                               |
-                | 0x80 | 使用的帧短保护间隔 (HT)                       |
+                标志 | 含义                                         
+                ---- | ---------------------------------------------
+                0x01 | 在CFP中发送/接收                             
+                0x02 | 用简短的序言发送/接收                        
+                0x04 | 使用WEP加密发送/接收                         
+                0x08 | 碎片发送/接收                                
+                0x10 | 框架包括FCS                                  
+                0x20 | 帧在802.11标头和有效负载之间填充 (到32位边界)
+                0x40 | 帧未通过FCS检查                              
+                0x80 | 使用的帧短保护间隔 (HT)                      
         - `Rate`
             - 结构: 8 bits rate
             - 单位: 500 Kbps
@@ -1224,16 +1222,16 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - Tx/Rx频率(MHz), 后跟标志
             - 变量名: ChannelFrequency
             - 变量名: ChannelFlags 
-                | 标志   | 含义                |
-                | ------ | ------------------- |
-                | 0x0010 | 涡轮通道            |
-                | 0x0020 | CCK通道             |
-                | 0x0040 | OFDM信道            |
-                | 0x0080 | 2 GHz频谱通道       |
-                | 0x0100 | 5 GHz频谱通道       |
-                | 0x0200 | 仅允许被动扫描      |
-                | 0x0400 | 动态CCK-OFDM信道    |
-                | 0x0800 | GFSK通道 (FHSS PHY) |
+                标志   | 含义               
+                ------ | -------------------
+                0x0010 | 涡轮通道           
+                0x0020 | CCK通道            
+                0x0040 | OFDM信道           
+                0x0080 | 2 GHz频谱通道      
+                0x0100 | 5 GHz频谱通道      
+                0x0200 | 仅允许被动扫描     
+                0x0400 | 动态CCK-OFDM信道   
+                0x0800 | GFSK通道 (FHSS PHY)
         - `FHSS`
             - 结构: 8 bits hop set, 8 bits hop pattern
             - 跳频无线电的跳集和模式
@@ -1276,11 +1274,11 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - 结构: 16 bits
             - 接收帧的属性
             - 变量名: RXFlags
-                | 值     | 含义                          |
-                | ------ | ----------------------------- |
-                | 0x0001 | 保留(FCS失败, 但这是常规标志) |
-                | 0x0002 | PLCP CRC检查失败              |
-                | 0xfffc | 保留以备将来扩展              |
+                值     | 含义                         
+                ------ | -----------------------------
+                0x0001 | 保留(FCS失败, 但这是常规标志)
+                0x0002 | PLCP CRC检查失败             
+                0xfffc | 保留以备将来扩展             
         - `TXFlags`
             - 变量名: TXFlags
             - https://www.radiotap.org/fields/TX%20flags.html
@@ -1298,16 +1296,16 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
                 - mcs
             - 变量名: knownMCS
 
-                | 值   | 含义                                |
-                | ---- | ----------------------------------- |
-                | 0x01 | 带宽已知                            |
-                | 0x02 | mcs索引已知(在mcs部分的字段中)      |
-                | 0x04 | guard 间隔已知                      |
-                | 0x08 | HT格式已知                          |
-                | 0x10 | FEC类型已知                         |
-                | 0x20 | STBC已知                            |
-                | 0x40 | Ness 已知(扩展空间流的数量)         |
-                | 0x80 | Ness数据-扩展空间流数量的1 bit(MSB) |
+                值   | 含义                                
+                ---- | ----------------------------------- 
+                0x01 | 带宽已知                            
+                0x02 | mcs索引已知(在mcs部分的字段中)      
+                0x04 | guard 间隔已知                      
+                0x08 | HT格式已知                          
+                0x10 | FEC类型已知                         
+                0x20 | STBC已知                            
+                0x40 | Ness 已知(扩展空间流的数量)         
+                0x80 | Ness数据-扩展空间流数量的1 bit(MSB) 
             - flags 
                 - 变量名: HT_format
                 - 变量名: Ness_LSB
@@ -1316,31 +1314,31 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
                 - 变量名: guard_interval
                 - 变量名: STBC_stream
 
-                | 值   | 含义                                 |
-                | ---- | ------------------------------------ |
-                | 0x03 | 带宽 (0: 20, 1: 40, 2: 20L, 3: 20U)  |
-                | 0x04 | guard 间隔 - 0: long GI, 1: short GI |
-                | 0x08 | HT 格式 - 0: mixed, 1: greenfield    |
-                | 0x10 | FEC 类型 - 0: BCC, 1: LDPC           |
-                | 0x60 | STBC流的数量                         |
-                | 0x80 | Ness-bit 扩展空间流数量的0 bit(LSB)  |
+                值   | 含义                                
+                ---- | ------------------------------------
+                0x03 | 带宽 (0: 20, 1: 40, 2: 20L, 3: 20U) 
+                0x04 | guard 间隔 - 0: long GI, 1: short GI
+                0x08 | HT 格式 - 0: mixed, 1: greenfield   
+                0x10 | FEC 类型 - 0: BCC, 1: LDPC          
+                0x60 | STBC流的数量                        
+                0x80 | Ness-bit 扩展空间流数量的0 bit(LSB) 
         - `A_MPDU`
             - A-MPDU status
             - 结构: 32 bits reference number, 16 bits flags, 8 bits delimiter CRC value, 8 bits reserved
             - 该字段的存在表明帧是作为a-MPDU的一部分接收的. reference number由捕获设备生成, 并且在A-MPDU的每个子帧中都是相同的. 由于捕获设备可能能够捕获多个通道, 或者可以合并来多个(并发)捕获的数据, 所以不能保证reference number在不同通道之间是惟一的. 因此, 应用程序应该使用通道信息和reference number来识别属于同一A-MPDU的子帧
             - 变量名: A_MPDU_ref
             - 变量名: A_MPDU_flags
-                | 值     | 含义                                         |
-                | ------ | -------------------------------------------- |
-                | 0x0001 | 驱动程序报告0长度子帧                        |
-                | 0x0002 | 帧是长度为0的子帧(仅当设置为0x0001时有效)    |
-                | 0x0004 | 已知最后一个子帧(应为A-MPDU中的所有子帧设置) |
-                | 0x0008 | 这个帧是最后一个子帧                         |
-                | 0x0010 | 定界符CRC错误                                |
-                | 0x0020 | 分隔符CRC值已知: 分隔符CRC值字段有效         |
-                | 0x0040 | EOF值                                        |
-                | 0x0080 | EOF值已知                                    |
-                | 0xff00 | 保留                                         |
+                值     | 含义                                        
+                ------ | --------------------------------------------
+                0x0001 | 驱动程序报告0长度子帧                       
+                0x0002 | 帧是长度为0的子帧(仅当设置为0x0001时有效)   
+                0x0004 | 已知最后一个子帧(应为A-MPDU中的所有子帧设置)
+                0x0008 | 这个帧是最后一个子帧                        
+                0x0010 | 定界符CRC错误                               
+                0x0020 | 分隔符CRC值已知: 分隔符CRC值字段有效        
+                0x0040 | EOF值                                       
+                0x0080 | EOF值已知                                   
+                0xff00 | 保留                                        
         - `VHT`
             - 结构: 16bits known, 8 bits flags, 8 bits bandwidth, 8 bits mcs_nss[4], 8 bits coding, 8 bits group_id, 16 bits partial_aid
             - https://www.radiotap.org/fields/VHT.html
@@ -1349,20 +1347,20 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - 结构: 64 bits timestamp, 16 bits accuracy, 8 bits unit/position, 8 bits flags
             - 变量名: ts_accuracy
             - 变量名: ts_position
-                | value | sampling position                                                |
-                | ----- | ---------------------------------------------------------------- |
-                | 0     | first bit (or symbol containing it) of MPDU - matches TSFT field |
-                | 1     | signal acquisition at start of PLCP                              |
-                | 2     | end of PPDU                                                      |
-                | 3     | end of MPDU (after FCS)                                          |
-                | 4-14  | reserved                                                         |
-                | 15    | unknown or vendor/OOB defined                                    |
+                value | sampling position                                               
+                ----- | ----------------------------------------------------------------
+                0     | first bit (or symbol containing it) of MPDU - matches TSFT field
+                1     | signal acquisition at start of PLCP                             
+                2     | end of PPDU                                                     
+                3     | end of MPDU (after FCS)                                         
+                4-14  | reserved                                                        
+                15    | unknown or vendor/OOB defined                                   
             - 变量名: ts_flags
-                | 值   | 含义                     |
-                | ---- | ------------------------ |
-                | 0x01 | 32位计数器(高32位未使用) |
-                | 0x02 | accuracy已知             |
-                | 0xFC | 保留                     |
+                值   | 含义                    
+                ---- | ------------------------
+                0x01 | 32位计数器(高32位未使用)
+                0x02 | accuracy已知            
+                0xFC | 保留                    
             - https://www.radiotap.org/fields/timestamp.html
         - `HE`
             - 结构: 16 bits data1, data2, data3, data4, data5, data6
@@ -1372,48 +1370,48 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
 
             - 变量名: he_data1
 
-                | 值     | 含义                                                  |
-                | ------ | ----------------------------------------------------- |
-                | 0x0003 | HE PPDU格式：0=HE_SU, 1=HE_EXT_SU, 2=HE_MU, 3=HE_TRIG |
-                | 0x0004 | BSS颜色已知                                           |
-                | 0x0008 | 光束变化已知                                          |
-                | 0x0010 | UL/DL已知                                             |
-                | 0x0020 | 数据MCS已知                                           |
-                | 0x0040 | 数据DCM已知                                           |
-                | 0x0080 | 编码已知                                              |
-                | 0x0100 | LDPC额外符号段已知                                    |
-                | 0x0200 | STBC已知                                              |
-                | 0x0400 | 空间复用已知 (空间复用 1 for HE_TRIG format)          |
-                | 0x0800 | 空间复用2已知 (HE_TRIG格式) , 已知STA-ID (HE_MU格式)  |
-                | 0x1000 | 空间重用3已知 (HE_TRIG格式)                           |
-                | 0x2000 | 空间重用4已知 (HE_TRIG格式)                           |
-                | 0x4000 | 数据BW/RU分配已知                                     |
-                | 0x8000 | 多普勒已知                                            |
+                值     | 含义                                                 
+                ------ | -----------------------------------------------------
+                0x0003 | HE PPDU格式：0=HE_SU, 1=HE_EXT_SU, 2=HE_MU, 3=HE_TRIG
+                0x0004 | BSS颜色已知                                          
+                0x0008 | 光束变化已知                                         
+                0x0010 | UL/DL已知                                            
+                0x0020 | 数据MCS已知                                          
+                0x0040 | 数据DCM已知                                          
+                0x0080 | 编码已知                                             
+                0x0100 | LDPC额外符号段已知                                   
+                0x0200 | STBC已知                                             
+                0x0400 | 空间复用已知 (空间复用 1 for HE_TRIG format)         
+                0x0800 | 空间复用2已知 (HE_TRIG格式) , 已知STA-ID (HE_MU格式) 
+                0x1000 | 空间重用3已知 (HE_TRIG格式)                          
+                0x2000 | 空间重用4已知 (HE_TRIG格式)                          
+                0x4000 | 数据BW/RU分配已知                                    
+                0x8000 | 多普勒已知                                           
             - 变量名: he_data2
-                | 值     | 含义                              |
-                | ------ | --------------------------------- |
-                | 0x0001 | pri/sec 80 MHz已知                |
-                | 0x0002 | 地理标志                          |
-                | 0x0004 | 的LTF符号数已知                   |
-                | 0x0008 | Pre-FEC填充因子已知               |
-                | 0x0010 | TxBF已知                          |
-                | 0x0020 | PE Disambiguity已知               |
-                | 0x0040 | TXOP已知                          |
-                | 0x0080 | 中间码周期已知                    |
-                | 0x3f00 | RU分配偏移                        |
-                | 0x4000 | RU分配偏移已知                    |
-                | 0x8000 | pri/sec 80 MHz (主要= 0, 次要= 1) |
+                值     | 含义                             
+                ------ | ---------------------------------
+                0x0001 | pri/sec 80 MHz已知               
+                0x0002 | 地理标志                         
+                0x0004 | 的LTF符号数已知                  
+                0x0008 | Pre-FEC填充因子已知              
+                0x0010 | TxBF已知                         
+                0x0020 | PE Disambiguity已知              
+                0x0040 | TXOP已知                         
+                0x0080 | 中间码周期已知                   
+                0x3f00 | RU分配偏移                       
+                0x4000 | RU分配偏移已知                   
+                0x8000 | pri/sec 80 MHz (主要= 0, 次要= 1)
             - 变量名: he_data3
-                | 值     | 含义                                                 |
-                | ------ | ---------------------------------------------------- |
-                | 0x003f | BSS颜色                                              |
-                | 0x0040 | 光束变化                                             |
-                | 0x0080 | UL/DL                                                |
-                | 0x0f00 | 数据MCS (对于HE_MU格式, 不是来自HE-SIG-A的SIG-B MCS) |
-                | 0x1000 | 数据DCM (请参阅数据MCS)                              |
-                | 0x2000 | 编码 (0=BCC, 1=LDPC)                                 |
-                | 0x4000 | LDPC额外符号段                                       |
-                | 0x8000 | 空时分组码                                           |
+                值     | 含义                                                
+                ------ | ----------------------------------------------------
+                0x003f | BSS颜色                                             
+                0x0040 | 光束变化                                            
+                0x0080 | UL/DL                                               
+                0x0f00 | 数据MCS (对于HE_MU格式, 不是来自HE-SIG-A的SIG-B MCS)
+                0x1000 | 数据DCM (请参阅数据MCS)                             
+                0x2000 | 编码 (0=BCC, 1=LDPC)                                
+                0x4000 | LDPC额外符号段                                      
+                0x8000 | 空时分组码                                          
             - 变量名: he_data4
                 值 | HE_SU和HE_EXT_SU格式的PPDU
                 0x000f | 空间复用
@@ -1430,24 +1428,24 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
                 0x7ff0 | 为其捕获数据的用户的STA-ID
                 0x8000 |  (保留) 
             - 变量名: he_data5
-                | 值     | 含义                                                                                                                                                                 |
-                | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-                | 0x000f | 数据带宽/RU分配 (0: 20、1: 40、2: 80、3: 160/80+80、4: 26-tone RU, 5: 52-tone RU, 6: 106-tone RU, 7: 242-tone RU, 8: 484-tone RU, 9: 996-tone RU, 10: 2x996-tone RU) |
-                | 0x0030 | GI (0: 0.8us, 1: 1.6us, 2: 3.2us, 3: 保留)                                                                                                                           |
-                | 0x00c0 | LTF符号大小 (0: 未知, 1: 1x, 2: 2x, 3: 4x)                                                                                                                           |
-                | 0x0700 | LTF符号的数量 (0: 1x, 1: 2x, 2: 4x, 3: 6x, 4: 8x, 5-7: 保留)                                                                                                         |
-                | 0x0800 | (保留)                                                                                                                                                               |
-                | 0x3000 | Pre-FEC的填充因子                                                                                                                                                    |
-                | 0x4000 | TxBF                                                                                                                                                                 |
-                | 0x8000 | PE Disambiguity                                                                                                                                                      |
+                值     | 含义                                                                                                                                                                
+                ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                0x000f | 数据带宽/RU分配 (0: 20、1: 40、2: 80、3: 160/80+80、4: 26-tone RU, 5: 52-tone RU, 6: 106-tone RU, 7: 242-tone RU, 8: 484-tone RU, 9: 996-tone RU, 10: 2x996-tone RU)
+                0x0030 | GI (0: 0.8us, 1: 1.6us, 2: 3.2us, 3: 保留)                                                                                                                          
+                0x00c0 | LTF符号大小 (0: 未知, 1: 1x, 2: 2x, 3: 4x)                                                                                                                          
+                0x0700 | LTF符号的数量 (0: 1x, 1: 2x, 2: 4x, 3: 6x, 4: 8x, 5-7: 保留)                                                                                                        
+                0x0800 | (保留)                                                                                                                                                              
+                0x3000 | Pre-FEC的填充因子                                                                                                                                                   
+                0x4000 | TxBF                                                                                                                                                                
+                0x8000 | PE Disambiguity                                                                                                                                                     
             - 变量名: he_data6
-                | 值     | 含义                                             |
-                | ------ | ------------------------------------------------ |
-                | 0x000f | NSTS (时空流的实际数量, 0: 未知, 1: 1, 依此类推) |
-                | 0x0010 | 多普勒值                                         |
-                | 0x00e0 | (保留)                                           |
-                | 0x7f00 | TXOP值                                           |
-                | 0x8000 | 中间码周期 (0: 10, 1: 20)                        |
+                值     | 含义                                            
+                ------ | ------------------------------------------------
+                0x000f | NSTS (时空流的实际数量, 0: 未知, 1: 1, 依此类推)
+                0x0010 | 多普勒值                                        
+                0x00e0 | (保留)                                          
+                0x7f00 | TXOP值                                          
+                0x8000 | 中间码周期 (0: 10, 1: 20)                       
         - `HE_MU`
             - 结构
                 - 16 bits flags1
@@ -1464,52 +1462,52 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
                     - 如果known=0, 则未报告任何数据(例如, 硬件不支持, 或SIG-B之一上的CRC错误)
                     - 如果known=1, 则根据下表, 带宽来自“HE-SIG-A中的带宽字段的带宽”标志2字段        
 
-                    | RU idx         | bw=0 (20 MHz) | bw=1 (40 MHz) | bw=2 (80 MHz) | bw=3 (160 MHz)       |
-                    | -------------- | ------------- | ------------- | ------------- | -------------------- |
-                    | RU[0]          | -122:122      | -244:-3       | -500:-259     | -1012:-771           |
-                    | RU[1]          | /             | /             | 17:258        | -495:-254            |
-                    | RU[2]          | /             | /             | /             | 12:253               |
-                    | RU[3]          | /             | /             | /             | 529:770              |
-                    | Center 26-tone | /             | /             | -16:-4, 4:16  | -528:-516, -508:-496 |
+                    RU idx         | bw=0 (20 MHz) | bw=1 (40 MHz) | bw=2 (80 MHz) | bw=3 (160 MHz)      
+                    -------------- | ------------- | ------------- | ------------- | --------------------
+                    RU[0]          | -122:122      | -244:-3       | -500:-259     | -1012:-771          
+                    RU[1]          | /             | /             | 17:258        | -495:-254           
+                    RU[2]          | /             | /             | /             | 12:253              
+                    RU[3]          | /             | /             | /             | 529:770             
+                    Center 26-tone | /             | /             | -16:-4, 4:16  | -528:-516, -508:-496
                 - Channel 2的tones取决于known字段
                     - 如果known=0, 则未报告任何数据(例如, 硬件不支持, 或SIG-B之一上的CRC错误)
                     - 如果known=1, 则根据下表, 带宽来自“HE-SIG-A中的带宽字段的带宽”标志2字段                        
 
-                    | RU idx         | bw=0 (20 MHz) | bw=1 (40 MHz) | bw=2 (80 MHz) | bw=3 (160 MHz)   |
-                    | -------------- | ------------- | ------------- | ------------- | ---------------- |
-                    | RU[0]          | /             | 3:244         | -258:-17      | -770:529         |
-                    | RU[1]          | /             | /             | 259:500       | -253:-12         |
-                    | RU[2]          | /             | /             | /             | 254:495          |
-                    | RU[3]          | /             | /             | /             | 771:1012         |
-                    | Center 26-tone | /             | /             | /             | 496:508, 516:528 |
+                    RU idx         | bw=0 (20 MHz) | bw=1 (40 MHz) | bw=2 (80 MHz) | bw=3 (160 MHz)  
+                    -------------- | ------------- | ------------- | ------------- | ----------------
+                    RU[0]          | /             | 3:244         | -258:-17      | -770:529        
+                    RU[1]          | /             | /             | 259:500       | -253:-12        
+                    RU[2]          | /             | /             | /             | 254:495         
+                    RU[3]          | /             | /             | /             | 771:1012        
+                    Center 26-tone | /             | /             | /             | 496:508, 516:528
             - 变量名: hemu_flags1, hemu_flags2
                 - Flags 1
-                    | 值     | 含义                                  |
-                    | ------ | ------------------------------------- |
-                    | 0x000f | SIG-B MCS (来自SIG-A)                 |
-                    | 0x0010 | SIG-B MCS已知                         |
-                    | 0x0020 | SIG-B DCM (来自SIG-A)                 |
-                    | 0x0040 | 已知SIG-B DCM                         |
-                    | 0x0080 | (Channel 2) 已知Center 26-tone RU bit |
-                    | 0x0100 | 已知Channel 1 RUs (取决于带宽)        |
-                    | 0x0200 | 已知Channel 2 RUs (取决于带宽)        |
-                    | 0x0c00 | (保留)                                |
-                    | 0x1000 | (Channel 1) 已知Center 26-tone RU bit |
-                    | 0x2000 | (Channel 1) Center 26-tone RU值       |
-                    | 0x4000 | 已知SIG-B Compression                 |
-                    | 0x8000 | 已知HE-SIG-B Symbols/MU-MIMO Users的# |
+                    值     | 含义                                 
+                    ------ | -------------------------------------
+                    0x000f | SIG-B MCS (来自SIG-A)                
+                    0x0010 | SIG-B MCS已知                        
+                    0x0020 | SIG-B DCM (来自SIG-A)                
+                    0x0040 | 已知SIG-B DCM                        
+                    0x0080 | (Channel 2) 已知Center 26-tone RU bit
+                    0x0100 | 已知Channel 1 RUs (取决于带宽)       
+                    0x0200 | 已知Channel 2 RUs (取决于带宽)       
+                    0x0c00 | (保留)                               
+                    0x1000 | (Channel 1) 已知Center 26-tone RU bit
+                    0x2000 | (Channel 1) Center 26-tone RU值      
+                    0x4000 | 已知SIG-B Compression                
+                    0x8000 | 已知HE-SIG-B Symbols/MU-MIMO Users的#
 
                 - Flags 2
-                    | 值     | 含义                                                                                                                                |
-                    | ------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-                    | 0x0003 | HE-SIG-A中Bandwidth字段中的bandwidth (0-20 MHz, …, 3-160 / 80 + 80 MHz)                                                             |
-                    | 0x0004 | HE-SIG-A中来自Bandwidth字段的bandwidth                                                                                              |
-                    | 0x0008 | SIG-A的SIG-B compression                                                                                                            |
-                    | 0x00f0 | # of HE-SIG-B Symbols - 1 or # of MU-MIMO Users - 1 from SIG-A                                                                      |
-                    | 0x0300 | HE-SIG-A中Bandwidth字段中的前导码打孔(0: 非打孔, 1: 打孔的次要20 MHz(主80兆赫, 若适用), 2:打孔, 但存在主40 MHz(主频80兆赫, 若适用)) |
-                    | 0x0400 | HE-SIG-A中Bandwidth字段中的前导码打孔                                                                                               |
-                    | 0x0800 | (Channel 2) Center 26-tone RU值                                                                                                     |
-                    | 0xf000 | (保留)                                                                                                                              |
+                    值     | 含义                                                                                                                               
+                    ------ | -----------------------------------------------------------------------------------------------------------------------------------
+                    0x0003 | HE-SIG-A中Bandwidth字段中的bandwidth (0-20 MHz, …, 3-160 / 80 + 80 MHz)                                                            
+                    0x0004 | HE-SIG-A中来自Bandwidth字段的bandwidth                                                                                             
+                    0x0008 | SIG-A的SIG-B compression                                                                                                           
+                    0x00f0 | # of HE-SIG-B Symbols - 1 or # of MU-MIMO Users - 1 from SIG-A                                                                     
+                    0x0300 | HE-SIG-A中Bandwidth字段中的前导码打孔(0: 非打孔, 1: 打孔的次要20 MHz(主80兆赫, 若适用), 2:打孔, 但存在主40 MHz(主频80兆赫, 若适用))
+                    0x0400 | HE-SIG-A中Bandwidth字段中的前导码打孔                                                                                              
+                    0x0800 | (Channel 2) Center 26-tone RU值                                                                                                    
+                    0xf000 | (保留)                                                                                                                             
         - `HE_MU_other_user`
             - 结构: 
                 - 16 bits per_user_1, 16 bits per_user_2
@@ -1517,50 +1515,50 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - 此字段包含来自SIG-B的per-user字段的数据, 用于可能尚未捕获其数据的额外用户. 通常不需要此字段；如果捕获了HE_MU PPDU, 则通常仅捕获许多用户之一, 在这种情况下, 所有数据可以在HE和HE-MU字段中进行编码.如果可以捕获更多的SIG-B, 则此字段允许在radiotap中捕获数据数据. 对于已经捕获到数据的用户, 可以但不必具有此字段. 请注意, MCS/DCM/etc. 捕数据的配置已经在常规HE字段中进行了编码, 对于SIG-B, 它是HE-MU字段的一部分.                 
             - 变量名: hemuou_per_user_1
 
-                | 值     | 含义                     |
-                | ------ | ------------------------ |
-                | 0x7fff | HE-SIG-B用户字段的B0-B14 |
-                | 0x8000 | 保留                     |
+                值     | 含义                    
+                ------ | ------------------------
+                0x7fff | HE-SIG-B用户字段的B0-B14
+                0x8000 | 保留                    
             - 变量名: hemuou_per_user_2
 
-                | 值     | 含义                                |
-                | ------ | ----------------------------------- |
-                | 0x003f | 符合规范的HE-SIG-B用户字段的B15-B20 |
-                | 0xffc0 | 保留                                |
+                值     | 含义                               
+                ------ | -----------------------------------
+                0x003f | 符合规范的HE-SIG-B用户字段的B15-B20
+                0xffc0 | 保留                               
             - 变量名: hemuou_per_user_position
                 - 包含此用户字段的位置, 从0开始.
             - 变量名: hemuou_per_user_known
 
-                | 值   | 含义                                     |
-                | ---- | ---------------------------------------- |
-                | 0x01 | 用户字段位置已知                         |
-                | 0x02 | 用户字段位置已知                         |
-                | 0x04 | 用户字段位置已知                         |
-                | 0x08 | 已知发射波束成形(B14, 仅适用于非MU-MIMO) |
-                | 0x10 | 已知空间配置(仅B11-B14, 仅适用于MU-MIMO) |
-                | 0x20 | 已知MCS(B15-18)                          |
-                | 0x40 | 已知DCM(B19)                             |
-                | 0x80 | 已知编码(B20)                            |
+                值   | 含义                                    
+                ---- | ----------------------------------------
+                0x01 | 用户字段位置已知                        
+                0x02 | 用户字段位置已知                        
+                0x04 | 用户字段位置已知                        
+                0x08 | 已知发射波束成形(B14, 仅适用于非MU-MIMO)
+                0x10 | 已知空间配置(仅B11-B14, 仅适用于MU-MIMO)
+                0x20 | 已知MCS(B15-18)                         
+                0x40 | 已知DCM(B19)                            
+                0x80 | 已知编码(B20)                           
         - `zero_length_psdu`
             - 0-length-PSDU 
             - 结构: 8 bits zero_length_psdu
             - 此字段的存在指示此PPDU中没有捕获PSDU, 也没有捕获到PSDU, 只有PHY数据有效, 并且radiotap头后面没有802.11头. 
             - 类型值含义
 
-                | 类型值 | 含义                         |
-                | ------ | ---------------------------- |
-                | 0      | 探测PPDU                     |
-                | 1      | 未捕获数据(例如, 多用户PPDU) |
-                | 0xff   | 供应商指定                   |
+                类型值 | 含义                        
+                ------ | ----------------------------
+                0      | 探测PPDU                    
+                1      | 未捕获数据(例如, 多用户PPDU)
+                0xff   | 供应商指定                  
         - `L_SIG`
             - 结构: 16bits data1, data2
             - 变量名: lsig_data1
 
-                | 值     | 含义     |
-                | ------ | -------- |
-                | 0x0001 | 速度已知 |
-                | 0x0002 | 长度已知 |
-                | 0xfffc | (保留)   |
+                值     | 含义    
+                ------ | --------
+                0x0001 | 速度已知
+                0x0002 | 长度已知
+                0xfffc | (保留)  
             - 变量名: lsig_length
             - 变量名: lsig_rate
         - `b28`
@@ -1626,56 +1624,56 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - 取值: ["Management", "Control", "Data", "Reserved"]
 - 变量名: subtype
     - 有许多不同种类的管理、控制和数据帧.因此需要4位的子类型字段来区分它们        
-        | Type Value(B3..B2) | Type Description | Subtype Value (B7..b4) | Subtype Description            |
-        | ------------------ | ---------------- | ---------------------- | ------------------------------ |
-        | 00                 | Management       | 0000                   | Association Request            |
-        | 00                 | Management       | 0001                   | Association Response           |
-        | 00                 | Management       | 0010                   | Reassociation Request          |
-        | 00                 | Management       | 0011                   | Reassociation Response         |
-        | 00                 | Management       | 0100                   | Probe Request                  |
-        | 00                 | Management       | 0101                   | Probe Response                 |
-        | 00                 | Management       | 0110                   | Timing Advertisement           |
-        | 00                 | Management       | 0111                   | Reserved                       |
-        | 00                 | Management       | 1000                   | Beacon                         |
-        | 00                 | Management       | 1001                   | ATIM                           |
-        | 00                 | Management       | 1010                   | Disassociation                 |
-        | 00                 | Management       | 1011                   | Authentication                 |
-        | 00                 | Management       | 1100                   | Deauthentication               |
-        | 00                 | Management       | 1101                   | Action                         |
-        | 00                 | Management       | 1110                   | Action No Ack (NACK)           |
-        | 00                 | Management       | 1111                   | Reserved                       |
-        | 01                 | Control          | 0000-0001              | Reserved                       |
-        | 01                 | Control          | 0010                   | Trigger                        |
-        | 01                 | Control          | 0100                   | Beamforming Report Poll        |
-        | 01                 | Control          | 0101                   | VHT/HE NDP Announcement        |
-        | 01                 | Control          | 0110                   | Control Frame Extension        |
-        | 01                 | Control          | 0111                   | Control Wrapper                |
-        | 01                 | Control          | 1000                   | Block Ack Request (BAR)        |
-        | 01                 | Control          | 1001                   | Block Ack (BA)                 |
-        | 01                 | Control          | 1010                   | PS-Poll                        |
-        | 01                 | Control          | 1011                   | RTS                            |
-        | 01                 | Control          | 1100                   | CTS                            |
-        | 01                 | Control          | 1101                   | ACK                            |
-        | 01                 | Control          | 1110                   | CF-End                         |
-        | 01                 | Control          | 1111                   | CF-End + CF-ACK                |
-        | 10                 | Data             | 0000                   | Data                           |
-        | 10                 | Data             | 0001                   | Data + CF-ACK                  |
-        | 10                 | Data             | 0010                   | Data + CF-Poll                 |
-        | 10                 | Data             | 0011                   | Data + CF-ACK + CF-Poll        |
-        | 10                 | Data             | 0100                   | Null (no data)                 |
-        | 10                 | Data             | 0101                   | CF-ACK (no data)               |
-        | 10                 | Data             | 0110                   | CF-Poll (no data)              |
-        | 10                 | Data             | 0111                   | CF-ACK + CF-Poll (no data)     |
-        | 10                 | Data             | 1000                   | QoS Data                       |
-        | 10                 | Data             | 1001                   | QoS Data + CF-ACK              |
-        | 10                 | Data             | 1010                   | QoS Data + CF-Poll             |
-        | 10                 | Data             | 1011                   | QoS Data + CF-ACK + CF-Poll    |
-        | 10                 | Data             | 1100                   | QoS Null (no data)             |
-        | 10                 | Data             | 1101                   | Reserved                       |
-        | 10                 | Data             | 1110                   | QoS CF-Poll (no data)          |
-        | 10                 | Data             | 1111                   | QoS CF-ACK + CF-Poll (no data) |
-        | 11                 | Extension        | 0000                   | DMG Beacon                     |
-        | 11                 | Extension        | 0001-1111              | Reserved                       |
+        Type Value(B3..B2) | Type Description | Subtype Value (B7..b4) | Subtype Description           
+        ------------------ | ---------------- | ---------------------- | ------------------------------
+        00                 | Management       | 0000                   | Association Request           
+        00                 | Management       | 0001                   | Association Response          
+        00                 | Management       | 0010                   | Reassociation Request         
+        00                 | Management       | 0011                   | Reassociation Response        
+        00                 | Management       | 0100                   | Probe Request                 
+        00                 | Management       | 0101                   | Probe Response                
+        00                 | Management       | 0110                   | Timing Advertisement          
+        00                 | Management       | 0111                   | Reserved                      
+        00                 | Management       | 1000                   | Beacon                        
+        00                 | Management       | 1001                   | ATIM                          
+        00                 | Management       | 1010                   | Disassociation                
+        00                 | Management       | 1011                   | Authentication                
+        00                 | Management       | 1100                   | Deauthentication              
+        00                 | Management       | 1101                   | Action                        
+        00                 | Management       | 1110                   | Action No Ack (NACK)          
+        00                 | Management       | 1111                   | Reserved                      
+        01                 | Control          | 0000-0001              | Reserved                      
+        01                 | Control          | 0010                   | Trigger                       
+        01                 | Control          | 0100                   | Beamforming Report Poll       
+        01                 | Control          | 0101                   | VHT/HE NDP Announcement       
+        01                 | Control          | 0110                   | Control Frame Extension       
+        01                 | Control          | 0111                   | Control Wrapper               
+        01                 | Control          | 1000                   | Block Ack Request (BAR)       
+        01                 | Control          | 1001                   | Block Ack (BA)                
+        01                 | Control          | 1010                   | PS-Poll                       
+        01                 | Control          | 1011                   | RTS                           
+        01                 | Control          | 1100                   | CTS                           
+        01                 | Control          | 1101                   | ACK                           
+        01                 | Control          | 1110                   | CF-End                        
+        01                 | Control          | 1111                   | CF-End + CF-ACK               
+        10                 | Data             | 0000                   | Data                          
+        10                 | Data             | 0001                   | Data + CF-ACK                 
+        10                 | Data             | 0010                   | Data + CF-Poll                
+        10                 | Data             | 0011                   | Data + CF-ACK + CF-Poll       
+        10                 | Data             | 0100                   | Null (no data)                
+        10                 | Data             | 0101                   | CF-ACK (no data)              
+        10                 | Data             | 0110                   | CF-Poll (no data)             
+        10                 | Data             | 0111                   | CF-ACK + CF-Poll (no data)    
+        10                 | Data             | 1000                   | QoS Data                      
+        10                 | Data             | 1001                   | QoS Data + CF-ACK             
+        10                 | Data             | 1010                   | QoS Data + CF-Poll            
+        10                 | Data             | 1011                   | QoS Data + CF-ACK + CF-Poll   
+        10                 | Data             | 1100                   | QoS Null (no data)            
+        10                 | Data             | 1101                   | Reserved                      
+        10                 | Data             | 1110                   | QoS CF-Poll (no data)         
+        10                 | Data             | 1111                   | QoS CF-ACK + CF-Poll (no data)
+        11                 | Extension        | 0000                   | DMG Beacon                    
+        11                 | Extension        | 0001-1111              | Reserved                      
 - 变量名: FCfield
     - 取值: 
         - "to-DS"
@@ -1706,12 +1704,12 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - BSSID (Basic Service Set IDentifier) : 基站集ID
     - ![](images/Scapy/2019-12-29-23-12-16.png)
 
-    | To DS | From DS | Address 1        | Address 2        | Address 3 | Address 4 | 含义                                           |
-    | ----- | ------- | ---------------- | ---------------- | --------- | --------- | ---------------------------------------------- |
-    | 0     | 0       | 接收端: 终点地址 | 发送端: 源点地址 | 基站集ID  | Not used  | 控制帧或管理帧                                 |
-    | 0     | 1       | 接收端: 终点地址 | 发送端: 基站集ID | 源地址    | Not used  | WiFi无线路由器到客户端                         |
-    | 1     | 0       | 接收端: 基站集ID | 发送端: 源点地址 | 终点地址  | Not used  | 客户端到WiFi无线路由器                         |
-    | 1     | 1       | 接收端           | 发送端           | 终点地址  | 源点地址  | 使用WDS–无线分配系统(例如网桥, 网状AP, 中继器) |
+    To DS | From DS | Address 1        | Address 2        | Address 3 | Address 4 | 含义                                          
+    ----- | ------- | ---------------- | ---------------- | --------- | --------- | ----------------------------------------------
+    0     | 0       | 接收端: 终点地址 | 发送端: 源点地址 | 基站集ID  | Not used  | 控制帧或管理帧                                
+    0     | 1       | 接收端: 终点地址 | 发送端: 基站集ID | 源地址    | Not used  | WiFi无线路由器到客户端                        
+    1     | 0       | 接收端: 基站集ID | 发送端: 源点地址 | 终点地址  | Not used  | 客户端到WiFi无线路由器                        
+    1     | 1       | 接收端           | 发送端           | 终点地址  | 源点地址  | 使用WDS–无线分配系统(例如网桥, 网状AP, 中继器)
 </details>
 
 ### 12.3.Dot11Beacon:`scapy.layers.dot11.Dot11Beacon`
@@ -1852,24 +1850,24 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
             - version字段必须存在.802.11定义了版本1.保留0
         - Group cipher suite
             - 版本号之后是组密码套件描述符.AP必须选择一个与所有相关端兼容的分组密码, 以保护广播和多播帧.只允许一个组密码.密码套件选择器有四个字节长.它以用于供应商的OUI和用于识别密码的数字开始.802.11i使用的OUI是00-0F-AC, 由802.11工作组使用.                    
-            | OUI               | Suite Type | Definition                                                   |
-            | ----------------- | ---------- | ------------------------------------------------------------ |
-            | 00-0F-AC (802.11) | 0          | Use the group cipher suite (only valid for pairwise ciphers) |
-            | 00-0F-AC          | 1          | WEP-40                                                       |
-            | 00-0F-AC          | 2          | TKIP                                                         |
-            | 00-0F-AC          | 3          | Reserved                                                     |
-            | 00-0F-AC          | 4          | CCMP[a]                                                      |
-            | 00-0F-AC          | 5          | WEP-104                                                      |
-            | Vendor OUI        | Any value  | Defined by vendor                                            |
+            OUI               | Suite Type | Definition                                                  
+            ----------------- | ---------- | ------------------------------------------------------------
+            00-0F-AC (802.11) | 0          | Use the group cipher suite (only valid for pairwise ciphers)
+            00-0F-AC          | 1          | WEP-40                                                      
+            00-0F-AC          | 2          | TKIP                                                        
+            00-0F-AC          | 3          | Reserved                                                    
+            00-0F-AC          | 4          | CCMP[a]                                                     
+            00-0F-AC          | 5          | WEP-104                                                     
+            Vendor OUI        | Any value  | Defined by vendor                                           
         - Pairwise Cipher Suites (count + list)
             - 分组密码套件之后可以有几个成对的密码套件来保护单播帧.有一个双字节计数, 后面是一系列受支持的密码描述符.可以将套件选择器设置为零, 以指示只支持组密码套件.除了信息元素的大小之外, 对支持的成对密码的数量没有限制.
         - Authentication and Key Management (AKM) suites (count + list)
             - 与成对密码套件选择器一样, 可能定义了多个身份验证类型.在计数之后, 有一系列四字节的套件标识符.与密码套件一样, 四字节标识符由一个OUI和一个套件类型号组成.表显示了标准的身份验证类型.                    
-            | OUI        | Suite type | Authentication        | Key management                                                      |
-            | ---------- | ---------- | --------------------- | ------------------------------------------------------------------- |
-            | 00-0F-AC   | 1          | 802.1X or PMK caching | Key derivation from preshared master key, as described in Chapter 7 |
-            | 00-0F-AC   | 2          | Pre-shared key        | Key derivation from pre-shared key, as described in Chapter 7       |
-            | Vendor OUI | Any        | Vendor-specific       | Vendor-specific                                                     |
+            OUI        | Suite type | Authentication        | Key management                                                     
+            ---------- | ---------- | --------------------- | -------------------------------------------------------------------
+            00-0F-AC   | 1          | 802.1X or PMK caching | Key derivation from preshared master key, as described in Chapter 7
+            00-0F-AC   | 2          | Pre-shared key        | Key derivation from pre-shared key, as described in Chapter 7      
+            Vendor OUI | Any        | Vendor-specific       | Vendor-specific                                                    
         - RSN Capabilties
             - 这个双字节字段由四个标记组成, 这些标记用于描述发送器的能力, 后面是必须设置为零的保留位
             - Pre-authentication
