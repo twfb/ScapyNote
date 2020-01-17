@@ -1624,6 +1624,7 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - 取值: ["Management", "Control", "Data", "Reserved"]
 - 变量名: subtype
     - 有许多不同种类的管理、控制和数据帧.因此需要4位的子类型字段来区分它们        
+
         Type Value(B3..B2) | Type Description | Subtype Value (B7..b4) | Subtype Description           
         ------------------ | ---------------- | ---------------------- | ------------------------------
         00                 | Management       | 0000                   | Association Request           
@@ -2355,10 +2356,10 @@ TCP_client不好使!!!
 - 检查RST响应将显示目标上的关闭端口
 
 ### 15.3.IP扫描
-    > 一个较低级别的IP扫描可以用来枚举支持的协议
+> 一个较低级别的IP扫描可以用来枚举支持的协议
         
-    - `ans, unans = sr(IP(dst="192.168.1.1",proto=(0,255)),timeout=1)`
-    - `[s.proto for s, __ in ans]`
+- `ans, unans = sr(IP(dst="192.168.1.1",proto=(0,255)),timeout=1)`
+- `[s.proto for s, __ in ans]`
 
 ### 15.4.ARP_Ping
 > 发现本地以太网主机的最快方法是使用ARP Ping方法
