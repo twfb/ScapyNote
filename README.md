@@ -1993,6 +1993,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
 ### 13.7.HCI_LE_Meta_Advertising_Report:`scapy.layers.bluetooth.HCI_LE_Meta_Advertising_Report`
 > https://www.silabs.com/community/wireless/bluetooth/knowledge-base.entry.html/2017/02/10/bluetooth_advertisin-hGsf
 
+<details>
+
 - type
     - https://www.bluetooth.com/zh-cn/specifications/assigned-numbers/generic-access-profile/
     - 0: conn_und
@@ -2037,6 +2039,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
                 -  例:Measured Power = -69 (for kontakt BLE beacons)
             - N: 常数取决于环境因素,范围2-4
 
+</details>
+
 ### 13.8.HCI_LE_Meta_Advertising_Reports:`scapy.layers.bluetooth.HCI_LE_Meta_Advertising_Reports`
 - len
     - 长度
@@ -2059,6 +2063,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
 
     bt.sr(ab.build_set_advertising_data())
     ```
+<details>
+
 - header
 - id1
     - 组织id
@@ -2093,6 +2099,7 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
 - mfg_reserved
     - MFG RESERVED
     - 预留给制造商用于实现特殊功能
+</details>
 
 ### 13.10.Eddystone_URL:`classscapy.contrib.eddystone.Eddystone_URL`
 > Eddystone-URL帧使用压缩的编码格式广播URL, 以使其更适合有限的广告包. 一旦被解码, 该URL可以被任何能够访问互联网的客户端使用. 例如, 如果Eddystone-URL信标要广播URL https://goo.gl/Aq18zF, 则接收到此数据包的任何客户端都可以选择访问该URL
@@ -2131,6 +2138,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     # build_set_advertising_data: 传入Apple_BLE_Submessage或Apple_BLE_Frame返回能被BLE发送的HCI_Cmd_LE_Set_Advertising_Data
     bt.sr(p.build_set_advertising_data())
     ```
+<details>
+
 - uuid
     - 组织id
     - UUID
@@ -2162,6 +2171,7 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     - 允许进一步细分区域或用例，由应用程序开发人员指定。
 - tx_power
     - RSSI值
+</details>
 
 ### 13.13.技巧
 
@@ -2179,6 +2189,7 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
     
 ## 十四.HTTP
 - 用法: 
+
 ```Python
 load_layer("http")
 ```
