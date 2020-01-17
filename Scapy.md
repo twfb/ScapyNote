@@ -421,7 +421,8 @@ Packet方法
 - proto
     - Protocol (6 bits)
     - 常用
-        | Protocol Number | Protocol Name                                                                                                                              | Abbreviation |
+    
+        Protocol Number | Protocol Name                                                                                                                              | Abbreviation 
         | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
         | 1               | <a href="/wiki/Internet_Control_Message_Protocol" title="Internet Control Message Protocol">Internet Control Message Protocol</a>          | ICMP         |
         | 2               | <a href="/wiki/Internet_Group_Management_Protocol" title="Internet Group Management Protocol">Internet Group Management Protocol</a>       | IGMP         |
