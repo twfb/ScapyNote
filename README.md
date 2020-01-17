@@ -1,4 +1,5 @@
 # Scapy 状元笔记
+
 ## 一.安装
 ### 1.1.必选
 tcpdump: `sudo apt-get install tcpdump`
@@ -1939,6 +1940,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
 > EIR Header
 - type
     - 取值(可填数字或字符串)
+        <details>
+
         - 详解: https://www.bluetooth.com/specifications/assigned-numbers/generic-access-profile
         - 0x01: "flags"
         - 0x02: "incomplete_list_16_bit_svc_uuids"
@@ -1982,6 +1985,8 @@ ISAKMP与密钥交换协议不同, 是为了将安全关联管理（和密钥管
         - 0x2b: "mesh_beacon"
         - 0x3d: "3d_information"
         - 0xff: "mfg_specific_data"
+
+        </details>
 - len
 
 ### 13.7.HCI_LE_Meta_Advertising_Report:`scapy.layers.bluetooth.HCI_LE_Meta_Advertising_Report`
