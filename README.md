@@ -1,5 +1,6 @@
 # Scapy 状元笔记
 
+
 ## 一.安装
 ### 1.1.必选
 tcpdump: `sudo apt-get install tcpdump`
@@ -126,18 +127,29 @@ options    : PacketListField                     = ([])
 ```
 
 `/`: 层叠加
+
 - 例: `Ether()/IP()/UDP()`
+
 `rdpcap(filename, count=-1)`: 读取pcap文件, count: 读取几个包, 默认全部
+
 `hexdump()`
+
 `import_hexcap()`
+
 `export_object()`: export a base64 encoded Python data structure representing a packet
+
 `import_object()`
+
 `.summary()`: 显示概要
 - ans.summary(lambda s,r : r.sprintf("%TCP.sport% \t %TCP.flags%") ) 
+
 `.nsummary()`: 显示概要(带数据包号)
+
 `fuzz(p)`: 返回除用户指定的数据外,其他参数均为随机的p
+
 `del()`: 就数据恢复默认值
 - 例: `del(a.ttl)`
+
 `conf.route`: 查看路由表
 - 例:
     ```Python
@@ -166,6 +178,7 @@ options    : PacketListField                     = ([])
 
 `sniff()`
 > 嗅探数据包并返回数据包列表. 
+
 - count: 要捕获的包的数量. 0意味着无穷.
 - store: 是否存储嗅探包或丢弃它们
 - prn: 应用于每个包的函数, 如果返回某个内容, 则显示它
@@ -191,6 +204,7 @@ options    : PacketListField                     = ([])
 - started_callback: 嗅探器开始嗅探时立即调用(默认:None)
 - 例:
     - `sniff(prn=lambda x:x.summary(), lfilter=lambda x:x.haslayer(TCP), stop_filter=lambda x:x.haslayer(Padding))`
+
 `AsyncSniffer()`
 - 例:
     ```Python
@@ -205,6 +219,7 @@ options    : PacketListField                     = ([])
     time.sleep(20)
     t.stop()
     ```
+
 `RandString(size=None, chars=b'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')`
 - 返回指定size的字符串
 
