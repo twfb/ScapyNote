@@ -163,6 +163,7 @@ options    : PacketListField                     = ([])
     0.0.0.0     0.0.0.0         192.168.8.1     eth0
     ```
 `traceroute()`
+
 `sniff()`
 > 嗅探数据包并返回数据包列表. 
 - count: 要捕获的包的数量. 0意味着无穷.
